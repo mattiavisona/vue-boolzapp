@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Vue-->
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+
+    
+  <div id="app">
+
+    <div id="chat-container">
+
+      <div id="users-list">
+
+        <div class="top-bar">
+          <div class="personal-profile">
+            Mattia
+          </div>
+        </div>
+        <div class="notification-alert"></div>
+        <div id="search-bar"></div>
+
+        <div id="contacts-search">
+          <input v-model="userSearch" @keyup="contactsSearch()" type="text" placeholder="Search New Chat">
+        </div>
+        <ul id="users-chat-list">
+
+          <div v-for="(contact, index) in contacts" v-show="contact.visible" class="user-chat-element" :class=" index == activeContactIndex ? 'active' : ''" @click="changeActiveContactIndex(index)" >
+
+            <div class="user-pic">
+              <img v-bind:src="contact.avatar" alt="user pic">
+            </div>
+            <div class="user-chat-details">
+              <div class="user-name">{{ contact.name }}</div>
+              <div class="user-last-message">Last Message</div>
+            </div>
+
+          </div>
+          
+        </ul>
+
+      </div>
+
+
+      <!-- _____________________________________________ -->
+
+      <div id="single-chat">
+        <div class="top-bar">
+          <div class="user-pic">
+            <img :src="contacts[activeContactIndex].avatar" alt="user pic">
+          </div>
+          <div class="user-chat-details">
+            <div class="user-name">{{ contacts[activeContactIndex].name }}</div>
+            <div class="user-last-access">12.00</div>
+          </div>
+        </div>
+
+        <div id="messages-list">
+         
+
+          <div v-for="singleMessage in contacts[activeContactIndex].messages" class="message" :class="singleMessage.status">
+
+            {{singleMessage.message}}
+            <div class="message-time">
+              {{ singleMessage.date }}
+            </div>
+
+          </div>
+
+
+        </div>
+        <div id="user-input">
+          <input v-model="userMessageInput" @keyup.enter="sendMessage()" type="text">
+        </div>
+      </div>
+
+    </div>
+
+    
+    <div id="background-top"></div>
+
+  </div>
+   
+
+
+
+    
+
+    <!--Javascript-->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
