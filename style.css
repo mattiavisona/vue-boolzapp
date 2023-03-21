@@ -44,8 +44,12 @@
   }
 
   .personal-profile{
-    padding-top: 30px;
-  }
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    gap: 10px;
+}
+
   
 
   #chat-container #users-list {  
@@ -89,14 +93,16 @@
   }
   
   #chat-container #users-list .user-chat-element:hover {
-    background-color: #eee;
+    background-color: rgb(89, 163, 223);
   }
   
   #chat-container #users-list .user-chat-element.active {
-    background-color: antiquewhite;
+    background-color: rgb(102, 235, 102);
+    opacity: .8;
   }
-  
-  #chat-container #users-list .user-chat-element .user-pic img {
+
+
+  img {
     height: 50px;
   
     border-radius: 50%;
@@ -181,6 +187,5 @@
   }
 
   .user-last-message{
-    color: red;
-    opacity: .5;
+    opacity: .3;
   }

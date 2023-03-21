@@ -12,6 +12,7 @@ createApp({
         // ogni messaggio contiene la data, il testo e lo stato (inviato o ricevuto)
       
         contacts: [
+
             {
                 name: 'Michele',
                 avatar: 'boolzap-img/avatar_1.jpg',
