@@ -110,7 +110,7 @@ createApp({
                 ],
             },
             {
-                name: 'Claudia',
+                name: 'Ilary',
                 avatar: 'boolzap-img/avatar_6.jpg',
                 visible: true,
                 messages: [
