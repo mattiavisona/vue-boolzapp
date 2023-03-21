@@ -19,10 +19,15 @@
 
       <div id="users-list">
 
-        <div class="top-bar">
+        <div class="top-bar-left">
             
           <div class="personal-profile">
               <img src="boolzap-img/avatar-io.png" alt=""> <span class="my-name">Mattia</span>
+          </div>
+          <div class="right-topbar">
+            <i class="fa-regular fa-circle "></i>
+            <i class="fa-solid fa-message "></i>
+            <i class="fa-solid fa-bars"></i>
           </div>
         </div>
 
@@ -48,16 +53,24 @@
       </div>
 
 
-      <!-- _____________________________________________ -->
+      
 
       <div id="single-chat">
         <div class="top-bar">
+            
           <div class="user-pic">
             <img :src="contacts[activeContactIndex].avatar" alt="user pic">
+            <div class="user-name">{{ contacts[activeContactIndex].name }}</div>
+            <div class="user-last-access"> <br> Ultimo accesso oggi alle 12.00</div>
           </div>
           <div class="user-chat-details">
-            <div class="user-name">{{ contacts[activeContactIndex].name }}</div>
-            <div class="user-last-access">12.00</div>
+            <div class="emoticon-top-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-bars"></i>
+
+
+            </div>
           </div>
         </div>
 
@@ -76,7 +89,7 @@
 
         </div>
         <div id="user-input">
-          <input v-model="userMessageInput" @keyup.enter="sendMessage()" type="text">
+          <input v-model="userMessageInput" @keyup.enter="sendMessage()" type="text" placeholder="Scrivi un nuovo messaggio">
         </div>
       </div>
 

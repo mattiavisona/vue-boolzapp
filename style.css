@@ -31,11 +31,7 @@
     bottom: 30px;
     left: 10px;
     right: 10px;
-  
-   
-  
-    width: 100%;
-    max-width: 1000px;
+    max-width: 1500px;
   
     margin: 0 auto;
   
@@ -60,10 +56,11 @@
     border-right: 1px solid #ccc;
   }
   
-  #chat-container #users-list .top-bar {
-    height: 80px;
-  
-    background-color: #eaeaea;
+  .emoticon-top-bar{
+    display: flex;
+    gap: 10px;
+    opacity: .5;
+    cursor: pointer;
   }
   
   
@@ -109,7 +106,6 @@
   }
   
   
-  /* single chat */
   
   #chat-container #single-chat {
     display: flex;  
@@ -124,19 +120,30 @@
     height: 80px;
   
     background-color: #eaeaea;
+
   
     display: flex;
     align-items: center;
+    justify-content: space-between;
   
   }
-  #chat-container #single-chat .top-bar .user-pic img {
+   img {
     height: 50px;
   
     border-radius: 50%;
   }
+
+  .right-topbar{
+    opacity: .4;
+    display: flex;
+    gap: 7px;
+    cursor: pointer;
+  }
   
   
   #chat-container #single-chat #messages-list {
+
+    background-image: url(boolzap-img/pattern.jpg);
     display: flex;
     flex-flow: column;
     gap: 10px;
@@ -147,6 +154,11 @@
   
     overflow-y: auto;
   
+  }
+
+  .user-pic{
+    display: flex;
+    align-items: center;
   }
   
   #chat-container #single-chat #messages-list .message {
@@ -160,11 +172,10 @@
     
     border-radius: 9px;
   
-    background-color: white;
+    background-color: oldlace;
   }
   
   #chat-container #single-chat #messages-list .message.sent  {
-    /* per allineare solo questo elemento in una direzione diversa da quella solita data dal genitore flex */
     align-self: flex-end;
   
     background-color: #d5f9ba;
@@ -180,12 +191,26 @@
     color: #aaa
   }
   
+  .user-last-access{
+    opacity: .5;
+    position: absolute;
+    top: 30px;
+    left: 400px;
+  }
   
   #chat-container #single-chat #user-input input {
     width: 100%;
     padding: 1em;
   }
 
+  
+
   .user-last-message{
     opacity: .3;
+  }
+
+  .top-bar-left{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
   }
